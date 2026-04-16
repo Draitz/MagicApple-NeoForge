@@ -1,4 +1,13 @@
 {
+  "item.magicapple.blaze_apple": "Ascension Apple",
+  "item.magicapple.blaze_apple": "Berserker Apple",
   "item.magicapple.blaze_apple": "Blaze Apple",
+  "item.magicapple.blaze_apple": "Chaos Apple",
+  "item.magicapple.blaze_apple": "Mining Apple",
+  "item.magicapple.blaze_apple": "Nightseer Apple",
+  "item.magicapple.blaze_apple": "Omen Apple",
+  "item.magicapple.blaze_apple": "Phantom Apple",
+  "item.magicapple.blaze_apple": "Speed Apple",
+  "item.magicapple.blaze_apple": "Tide Apple",
   "itemGroup.magicapple": "Magic Apple"
 }
