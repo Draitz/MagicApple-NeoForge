@@ -71,7 +71,7 @@ public class MagicAppleItem extends Item {
 
             // Chaos logic
             if (isChaos) {
-                applyChaosEffects(player, 1, 5, 400, false);
+                applyChaosEffects(player, 3, 5, 5, false);
             }
         }
 
@@ -87,16 +87,28 @@ public class MagicAppleItem extends Item {
             new MobEffectInstance(MobEffects.WATER_BREATHING, 400, 0),
             new MobEffectInstance(MobEffects.JUMP_BOOST, 400, 0),
             new MobEffectInstance(MobEffects.HASTE, 400, 0),
-            new MobEffectInstance(MobEffects.ABSORPTION, 400, 0)
+            new MobEffectInstance(MobEffects.ABSORPTION, 400, 0),
+            // Negative effects
+            new MobEffectInstance(MobEffects.POISON, 200, 0),
+            new MobEffectInstance(MobEffects.WEAKNESS, 400, 0),
+            new MobEffectInstance(MobEffects.SLOWNESS, 400, 0),
+            new MobEffectInstance(MobEffects.BLINDNESS, 200, 0),
+            new MobEffectInstance(MobEffects.HUNGER, 300, 0),
+            new MobEffectInstance(MobEffects.LEVITATION, 100, 0),
+            new MobEffectInstance(MobEffects.WITHER, 200, 0)
     );
 
-    protected static void applyChaosEffects(Player player, int min, int max, int durationMultiplier, boolean allowLevelTwo) {
+    protected static void applyChaosEffects(Player player, int min, int max,
+                                            int durationMultiplier, boolean allowLevelTwo) {
         // Pick random number of effects between min and max
         int count = min + player.level().getRandom().nextInt(max - min + 1);
+        //logger für überprüfung der ausgabe
+        MagicApple.LOGGER.info("Chaos Apple: giving {} effects", count);
 
         // Shuffle a copy of the pool so we dont pick the same effect twice
         List<MobEffectInstance> pool = new java.util.ArrayList<>(CHAOS_POOL);
-        java.util.Collections.shuffle(pool, new java.util.Random());
+        java.util.Collections.shuffle(pool, new java.util.Random(player.level().getGameTime()));
+        //java.util.Collections.shuffle(pool, new java.util.Random());
 
         for (int i = 0; i < count && i < pool.size(); i++) {
             MobEffectInstance original = pool.get(i);
