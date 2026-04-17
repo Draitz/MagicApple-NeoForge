@@ -25,7 +25,16 @@ public class ModCreativeTabs {
                     .title(Component.literal("Magic Apple"))
                     .icon(() -> new ItemStack(ModItems.BLAZE_APPLE.get()))
                     .displayItems((params, output) -> {
+                        output.accept(ModItems.ASCENSION_APPLE.get());
+                        output.accept(ModItems.BERSERKER_APPLE.get());
                         output.accept(ModItems.BLAZE_APPLE.get());
+                        output.accept(ModItems.CHAOS_APPLE.get());
+                        output.accept(ModItems.MINING_APPLE.get());
+                        output.accept(ModItems.NIGHTSEER_APPLE.get());
+                        output.accept(ModItems.OMEN_APPLE.get());
+                        output.accept(ModItems.PHANTOM_APPLE.get());
+                        output.accept(ModItems.SPEED_APPLE.get());
+                        output.accept(ModItems.TIDE_APPLE.get());
                     })
                     .build());
 }

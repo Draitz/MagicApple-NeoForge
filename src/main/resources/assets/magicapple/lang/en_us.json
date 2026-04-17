@@ -1,13 +1,13 @@
 {
-  "item.magicapple.blaze_apple": "Ascension Apple",
-  "item.magicapple.blaze_apple": "Berserker Apple",
+  "item.magicapple.ascension_apple": "Ascension Apple",
+  "item.magicapple.berserker_apple": "Berserker Apple",
   "item.magicapple.blaze_apple": "Blaze Apple",
-  "item.magicapple.blaze_apple": "Chaos Apple",
-  "item.magicapple.blaze_apple": "Mining Apple",
-  "item.magicapple.blaze_apple": "Nightseer Apple",
-  "item.magicapple.blaze_apple": "Omen Apple",
-  "item.magicapple.blaze_apple": "Phantom Apple",
-  "item.magicapple.blaze_apple": "Speed Apple",
-  "item.magicapple.blaze_apple": "Tide Apple",
+  "item.magicapple.chaos_apple": "Chaos Apple",
+  "item.magicapple.mining_apple": "Mining Apple",
+  "item.magicapple.nightseer_apple": "Nightseer Apple",
+  "item.magicapple.omen_apple": "Omen Apple",
+  "item.magicapple.phantom_apple": "Phantom Apple",
+  "item.magicapple.speed_apple": "Speed Apple",
+  "item.magicapple.tide_apple": "Tide Apple",
   "itemGroup.magicapple": "Magic Apple"
 }
