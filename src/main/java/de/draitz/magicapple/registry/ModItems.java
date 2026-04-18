@@ -1,6 +1,7 @@
 package de.draitz.magicapple.registry;
 
 import de.draitz.magicapple.MagicApple;
+import de.draitz.magicapple.item.EmpoweredChaosAppleItem;
 import de.draitz.magicapple.item.EmpoweredMagicAppleItem;
 import de.draitz.magicapple.item.MagicAppleItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -143,7 +144,7 @@ public class ModItems {
     // --- Empowered Chaos Apple ---
     public static final DeferredItem<Item> EMPOWERED_CHAOS_APPLE =
             MagicApple.ITEMS.registerItem("empowered_chaos_apple",
-                    properties -> new EmpoweredMagicAppleItem(properties.food(MAGIC_FOOD).rarity(Rarity.EPIC)
+                    properties -> new EmpoweredChaosAppleItem(properties.food(MAGIC_FOOD).rarity(Rarity.EPIC)
                     ));
 
     // --- Empowered Mining Apple ---

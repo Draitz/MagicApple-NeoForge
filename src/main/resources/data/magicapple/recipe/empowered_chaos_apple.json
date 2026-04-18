@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:chaos_apple",
+        "W": "minecraft:wither_rose",
+        "F": "minecraft:fermented_spider_eye",
+        "G": "minecraft:ghast_tear"
+    },
+    "pattern": [
+        "WAW",
+        "AGA",
+        "FAF"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_chaos_apple"
+    }
+}

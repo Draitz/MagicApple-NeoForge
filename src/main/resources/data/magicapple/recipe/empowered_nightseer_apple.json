@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:nightseer_apple",
+        "E": "minecraft:echo_shard",
+        "O": "minecraft:ender_eye"
+    },
+    "pattern": [
+        "EAE",
+        "AOA",
+        "EAE"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_nightseer_apple"
+    }
+}

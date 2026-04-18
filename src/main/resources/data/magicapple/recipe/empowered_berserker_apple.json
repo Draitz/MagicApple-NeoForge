@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:berserker_apple",
+        "G": "minecraft:gunpowder",
+        "N": "minecraft:netherite_scrap"
+    },
+    "pattern": [
+        "GAG",
+        "ANA",
+        "GAG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_berserker_apple"
+    }
+}

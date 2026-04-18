@@ -26,6 +26,7 @@ public class ModEvents {
                 player.getAbilities().mayfly = false;
                 player.getAbilities().flying = false;
                 player.onUpdateAbilities();
+                player.removeEffect(ModEffects.FLIGHT);
                 MagicAppleItem.flightEndTimes.remove(player.getUUID());
             }
         }

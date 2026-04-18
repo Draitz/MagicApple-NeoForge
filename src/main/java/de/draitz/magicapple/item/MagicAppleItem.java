@@ -1,5 +1,6 @@
 package de.draitz.magicapple.item;
 
+import de.draitz.magicapple.registry.ModEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -71,6 +72,9 @@ public class MagicAppleItem extends Item {
                 player.onUpdateAbilities();
                 long expireTime = level.getGameTime() + flightDuration;
                 flightEndTimes.put(player.getUUID(), expireTime);
+
+                 // Show flight effect as indicator
+                player.addEffect(new MobEffectInstance(ModEffects.FLIGHT, flightDuration, 0));
             }
 
             // Chaos logic

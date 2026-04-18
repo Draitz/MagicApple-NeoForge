@@ -2,7 +2,9 @@ package de.draitz.magicapple;
 
 import com.mojang.logging.LogUtils;
 import de.draitz.magicapple.registry.ModCreativeTabs;
+import de.draitz.magicapple.registry.ModEffects;
 import de.draitz.magicapple.registry.ModItems;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -40,6 +42,8 @@ public class MagicApple {
     public MagicApple(IEventBus modEventBus, ModContainer modContainer) {
         ITEMS.register(modEventBus);    //Register all items
         ModCreativeTabs.TABS.register(modEventBus); //Register custom creative tabs
+        ModEffects.MOB_EFFECTS.register(modEventBus);
         ModItems.register();
+        ModEffects.register();
     }
 }

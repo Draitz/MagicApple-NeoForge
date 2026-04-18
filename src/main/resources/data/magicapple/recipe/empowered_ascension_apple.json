@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:ascension_apple",
+        "F": "minecraft:phantom_membrane",
+        "G": "minecraft:ghast_tear"
+    },
+    "pattern": [
+        "FAF",
+        "AGA",
+        "FAF"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_ascension_apple"
+    }
+}
