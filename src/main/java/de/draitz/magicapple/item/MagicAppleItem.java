@@ -1,5 +1,6 @@
 package de.draitz.magicapple.item;
 
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -83,6 +84,7 @@ public class MagicAppleItem extends Item {
 
     // Pool of possible chaos effects
     private static final List<MobEffectInstance> CHAOS_POOL = List.of(
+            //Positiv effects
             new MobEffectInstance(MobEffects.SPEED, 400, 0),
             new MobEffectInstance(MobEffects.STRENGTH, 400, 0),
             new MobEffectInstance(MobEffects.REGENERATION, 200, 0),
@@ -90,7 +92,16 @@ public class MagicAppleItem extends Item {
             new MobEffectInstance(MobEffects.WATER_BREATHING, 400, 0),
             new MobEffectInstance(MobEffects.JUMP_BOOST, 400, 0),
             new MobEffectInstance(MobEffects.HASTE, 400, 0),
-            new MobEffectInstance(MobEffects.ABSORPTION, 400, 0)
+            new MobEffectInstance(MobEffects.ABSORPTION, 400, 0),
+            //Negativ effects
+            new MobEffectInstance(MobEffects.SLOWNESS, 200, 0),
+            new MobEffectInstance(MobEffects.WEAKNESS, 200, 0),
+            new MobEffectInstance(MobEffects.MINING_FATIGUE, 200, 0),
+            new MobEffectInstance(MobEffects.BLINDNESS, 100, 0),
+            new MobEffectInstance(MobEffects.NAUSEA, 100, 0),
+            new MobEffectInstance(MobEffects.HUNGER, 200, 0),
+            new MobEffectInstance(MobEffects.POISON, 60, 0),
+            new MobEffectInstance(MobEffects.DARKNESS, 100, 0)
     );
 
     protected static void applyChaosEffects(Player player, int min, int max, int durationMultiplier, boolean allowLevelTwo) {
