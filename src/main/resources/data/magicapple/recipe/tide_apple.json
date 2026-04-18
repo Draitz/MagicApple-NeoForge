@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "P": "minecraft:prismarine_crystals",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "PPP",
+        "PAP",
+        "PPP"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:tide_apple"
+    }
+}

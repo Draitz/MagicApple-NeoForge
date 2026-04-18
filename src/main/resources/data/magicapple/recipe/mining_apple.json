@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "G": "minecraft:glowstone_dust",
+        "R": "minecraft:redstone",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "GRG",
+        "RAR",
+        "GRG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:mining_apple"
+    }
+}

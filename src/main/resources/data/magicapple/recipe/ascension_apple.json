@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "F": "minecraft:feather",
+        "P": "minecraft:phantom_membrane",
+        "W": "minecraft:wind_charge",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "FPF",
+        "PAP",
+        "FWF"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:ascension_apple"
+    }
+}
