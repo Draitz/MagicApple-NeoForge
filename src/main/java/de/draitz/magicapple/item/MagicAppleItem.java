@@ -1,6 +1,5 @@
-package de.draitz.magicapple;
+package de.draitz.magicapple.item;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,7 +7,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.core.Holder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,32 +19,37 @@ public class MagicAppleItem extends Item {
     private final boolean grantFlight;        //should give the apple flight?
     private final int flightDuration;   //Duration in ticks. 20ticks = 1sec
     private final boolean isChaos;  // Does this apple give random effects?
+    private final int chaosMin;
+    private final int chaosMax;
+    private final boolean chaosLevelTwo;
+
 
     // Stores when each player's flight expires (game time in ticks)
     public static final Map<UUID, Long> flightEndTimes = new HashMap<>();
 
     // Main constructor - all fields
-    public MagicAppleItem(Properties properties, boolean grantFlight, int flightDuration, boolean isChaos, MobEffectInstance... effects) {
+    public MagicAppleItem(Properties properties,
+                          boolean grantFlight, int flightDuration,
+                          boolean isChaos, int chaosMin, int chaosMax, boolean chaosLevelTwo,
+                          MobEffectInstance... effects) {
         super(properties);
         this.effects = List.of(effects);
         this.grantFlight = grantFlight;
         this.flightDuration = flightDuration;
         this.isChaos = isChaos;
+        this.chaosMin = chaosMin;
+        this.chaosMax = chaosMax;
+        this.chaosLevelTwo = chaosLevelTwo;
     }
 
     // Constructor without flight, used by all normal apples
     public MagicAppleItem(Properties properties, MobEffectInstance... effects) {
-        this(properties, false, 0, false, effects);
+        this(properties, false, 0, false, 0, 0, false, effects);
     }
 
     // Constructor with flight, used by Ascension Apple
     public MagicAppleItem(Properties properties, boolean grantFlight, int flightDuration, MobEffectInstance... effects) {
-        this(properties, grantFlight, flightDuration, false, effects);
-    }
-
-    // Constructor for Chaos Apple
-    public MagicAppleItem(Properties properties, boolean isChaos) {
-        this(properties, false, 0, isChaos);
+        this(properties, grantFlight, flightDuration, false, 0, 0, false, effects);
     }
 
 
@@ -71,7 +74,7 @@ public class MagicAppleItem extends Item {
 
             // Chaos logic
             if (isChaos) {
-                applyChaosEffects(player, 1, 5, 400, false);
+                applyChaosEffects(player, chaosMin, chaosMax, 5, chaosLevelTwo);
             }
         }
 

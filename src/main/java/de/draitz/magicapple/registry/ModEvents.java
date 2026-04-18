@@ -1,5 +1,7 @@
-package de.draitz.magicapple;
+package de.draitz.magicapple.registry;
 
+import de.draitz.magicapple.MagicApple;
+import de.draitz.magicapple.item.MagicAppleItem;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;

@@ -9,5 +9,15 @@
   "item.magicapple.phantom_apple": "Phantom Apple",
   "item.magicapple.speed_apple": "Speed Apple",
   "item.magicapple.tide_apple": "Tide Apple",
+  "item.magicapple.empowered_ascension_apple": "Empowered Ascension Apple",
+  "item.magicapple.empowered_berserker_apple": "Empowered Berserker Apple",
+  "item.magicapple.empowered_blaze_apple": "Empowered Blaze Apple",
+  "item.magicapple.empowered_chaos_apple": "Empowered Chaos Apple",
+  "item.magicapple.empowered_mining_apple": "Empowered Mining Apple",
+  "item.magicapple.empowered_nightseer_apple": "Empowered Nightseer Apple",
+  "item.magicapple.empowered_omen_apple": "Empowered Omen Apple",
+  "item.magicapple.empowered_phantom_apple": "Empowered Phantom Apple",
+  "item.magicapple.empowered_speed_apple": "Empowered Speed Apple",
+  "item.magicapple.empowered_tide_apple": "Empowered Tide Apple",
   "itemGroup.magicapple": "Magic Apple"
 }
