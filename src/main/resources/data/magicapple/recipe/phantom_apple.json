@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "E": "minecraft:spider_eye",
+        "S": "minecraft:sugar",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "ESE",
+        "SAS",
+        "ESE"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:phantom_apple"
+    }
+}

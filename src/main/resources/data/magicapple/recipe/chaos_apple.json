@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": "minecraft:blaze_powder",
+        "T": "minecraft:prismarine_crystals",
+        "P": "minecraft:phantom_membrane",
+        "S": "minecraft:sugar",
+        "I": "minecraft:iron_ingot",
+        "D": "minecraft:glow_ink_sac",
+        "G": "minecraft:glowstone_dust",
+        "E": "minecraft:emerald",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "BTP",
+        "SAI",
+        "DGE"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:chaos_apple"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": "minecraft:blaze_powder",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "BBB",
+        "BAB",
+        "BBB"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:blaze_apple"
+    }
+}

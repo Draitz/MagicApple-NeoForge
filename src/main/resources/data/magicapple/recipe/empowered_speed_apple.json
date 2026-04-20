@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:speed_apple",
+        "S": "minecraft:sugar",
+        "R": "minecraft:rabbit_foot",
+        "W": "minecraft:wind_charge"
+    },
+    "pattern": [
+        "SAS",
+        "AWA",
+        "RAR"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_speed_apple"
+    }
+}

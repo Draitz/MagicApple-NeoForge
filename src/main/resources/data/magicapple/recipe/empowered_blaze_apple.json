@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:blaze_apple",
+        "B": "minecraft:blaze_rod",
+        "G": "minecraft:ghast_tear"
+    },
+    "pattern": [
+        "BAB",
+        "AGA",
+        "BAB"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_blaze_apple"
+    }
+}

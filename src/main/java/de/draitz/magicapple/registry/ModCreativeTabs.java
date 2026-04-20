@@ -1,5 +1,6 @@
-package de.draitz.magicapple;
+package de.draitz.magicapple.registry;
 
+import de.draitz.magicapple.MagicApple;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -35,6 +36,16 @@ public class ModCreativeTabs {
                         output.accept(ModItems.PHANTOM_APPLE.get());
                         output.accept(ModItems.SPEED_APPLE.get());
                         output.accept(ModItems.TIDE_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_ASCENSION_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_BERSERKER_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_BLAZE_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_CHAOS_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_MINING_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_NIGHTSEER_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_OMEN_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_PHANTOM_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_SPEED_APPLE.get());
+                        output.accept(ModItems.EMPOWERED_TIDE_APPLE.get());
                     })
                     .build());
 }

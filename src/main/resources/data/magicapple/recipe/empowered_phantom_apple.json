@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:phantom_apple",
+        "P": "minecraft:phantom_membrane",
+        "F": "minecraft:feather",
+        "E": "minecraft:ender_pearl"
+    },
+    "pattern": [
+        "PAP",
+        "AEA",
+        "FAF"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_phantom_apple"
+    }
+}

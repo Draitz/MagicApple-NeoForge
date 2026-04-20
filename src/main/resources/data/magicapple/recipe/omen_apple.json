@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "E": "minecraft:emerald",
+        "R": "minecraft:arrow",
+        "I": "minecraft:iron_ingot",
+        "A": "minecraft:apple"
+    },
+    "pattern": [
+        "ERE",
+        "IAI",
+        "ERE"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:omen_apple"
+    }
+}

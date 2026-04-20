@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:tide_apple",
+        "C": "minecraft:prismarine_crystals",
+        "N": "minecraft:nautilus_shell",
+        "S": "minecraft:turtle_scute"
+    },
+    "pattern": [
+        "CAC",
+        "ASA",
+        "NAN"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_tide_apple"
+    }
+}

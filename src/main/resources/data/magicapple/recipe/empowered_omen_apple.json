@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "A": "magicapple:omen_apple",
+        "E": "minecraft:emerald",
+        "R": "minecraft:arrow",
+        "B": "minecraft:ominous_banner"
+    },
+    "pattern": [
+        "EAE",
+        "ABA",
+        "RAR"
+    ],
+    "result": {
+        "count": 1,
+        "id": "magicapple:empowered_omen_apple"
+    }
+}

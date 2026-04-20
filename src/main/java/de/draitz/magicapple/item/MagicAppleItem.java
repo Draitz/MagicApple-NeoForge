@@ -1,5 +1,6 @@
-package de.draitz.magicapple;
+package de.draitz.magicapple.item;
 
+import de.draitz.magicapple.registry.ModEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -8,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.core.Holder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,32 +21,37 @@ public class MagicAppleItem extends Item {
     private final boolean grantFlight;        //should give the apple flight?
     private final int flightDuration;   //Duration in ticks. 20ticks = 1sec
     private final boolean isChaos;  // Does this apple give random effects?
+    private final int chaosMin;
+    private final int chaosMax;
+    private final boolean chaosLevelTwo;
+
 
     // Stores when each player's flight expires (game time in ticks)
     public static final Map<UUID, Long> flightEndTimes = new HashMap<>();
 
     // Main constructor - all fields
-    public MagicAppleItem(Properties properties, boolean grantFlight, int flightDuration, boolean isChaos, MobEffectInstance... effects) {
+    public MagicAppleItem(Properties properties,
+                          boolean grantFlight, int flightDuration,
+                          boolean isChaos, int chaosMin, int chaosMax, boolean chaosLevelTwo,
+                          MobEffectInstance... effects) {
         super(properties);
         this.effects = List.of(effects);
         this.grantFlight = grantFlight;
         this.flightDuration = flightDuration;
         this.isChaos = isChaos;
+        this.chaosMin = chaosMin;
+        this.chaosMax = chaosMax;
+        this.chaosLevelTwo = chaosLevelTwo;
     }
 
     // Constructor without flight, used by all normal apples
     public MagicAppleItem(Properties properties, MobEffectInstance... effects) {
-        this(properties, false, 0, false, effects);
+        this(properties, false, 0, false, 0, 0, false, effects);
     }
 
     // Constructor with flight, used by Ascension Apple
     public MagicAppleItem(Properties properties, boolean grantFlight, int flightDuration, MobEffectInstance... effects) {
-        this(properties, grantFlight, flightDuration, false, effects);
-    }
-
-    // Constructor for Chaos Apple
-    public MagicAppleItem(Properties properties, boolean isChaos) {
-        this(properties, false, 0, isChaos);
+        this(properties, grantFlight, flightDuration, false, 0, 0, false, effects);
     }
 
 
@@ -67,11 +72,14 @@ public class MagicAppleItem extends Item {
                 player.onUpdateAbilities();
                 long expireTime = level.getGameTime() + flightDuration;
                 flightEndTimes.put(player.getUUID(), expireTime);
+
+                 // Show flight effect as indicator
+                player.addEffect(new MobEffectInstance(ModEffects.FLIGHT, flightDuration, 0));
             }
 
             // Chaos logic
             if (isChaos) {
-                applyChaosEffects(player, 3, 5, 5, false);
+                applyChaosEffects(player, chaosMin, chaosMax, 5, chaosLevelTwo);
             }
         }
 
@@ -80,6 +88,7 @@ public class MagicAppleItem extends Item {
 
     // Pool of possible chaos effects
     private static final List<MobEffectInstance> CHAOS_POOL = List.of(
+            //Positiv effects
             new MobEffectInstance(MobEffects.SPEED, 400, 0),
             new MobEffectInstance(MobEffects.STRENGTH, 400, 0),
             new MobEffectInstance(MobEffects.REGENERATION, 200, 0),
@@ -88,27 +97,24 @@ public class MagicAppleItem extends Item {
             new MobEffectInstance(MobEffects.JUMP_BOOST, 400, 0),
             new MobEffectInstance(MobEffects.HASTE, 400, 0),
             new MobEffectInstance(MobEffects.ABSORPTION, 400, 0),
-            // Negative effects
-            new MobEffectInstance(MobEffects.POISON, 200, 0),
-            new MobEffectInstance(MobEffects.WEAKNESS, 400, 0),
-            new MobEffectInstance(MobEffects.SLOWNESS, 400, 0),
-            new MobEffectInstance(MobEffects.BLINDNESS, 200, 0),
-            new MobEffectInstance(MobEffects.HUNGER, 300, 0),
-            new MobEffectInstance(MobEffects.LEVITATION, 100, 0),
-            new MobEffectInstance(MobEffects.WITHER, 200, 0)
+            //Negativ effects
+            new MobEffectInstance(MobEffects.SLOWNESS, 200, 0),
+            new MobEffectInstance(MobEffects.WEAKNESS, 200, 0),
+            new MobEffectInstance(MobEffects.MINING_FATIGUE, 200, 0),
+            new MobEffectInstance(MobEffects.BLINDNESS, 100, 0),
+            new MobEffectInstance(MobEffects.NAUSEA, 100, 0),
+            new MobEffectInstance(MobEffects.HUNGER, 200, 0),
+            new MobEffectInstance(MobEffects.POISON, 60, 0),
+            new MobEffectInstance(MobEffects.DARKNESS, 100, 0)
     );
 
-    protected static void applyChaosEffects(Player player, int min, int max,
-                                            int durationMultiplier, boolean allowLevelTwo) {
+    protected static void applyChaosEffects(Player player, int min, int max, int durationMultiplier, boolean allowLevelTwo) {
         // Pick random number of effects between min and max
         int count = min + player.level().getRandom().nextInt(max - min + 1);
-        //logger für überprüfung der ausgabe
-        MagicApple.LOGGER.info("Chaos Apple: giving {} effects", count);
 
         // Shuffle a copy of the pool so we dont pick the same effect twice
         List<MobEffectInstance> pool = new java.util.ArrayList<>(CHAOS_POOL);
-        java.util.Collections.shuffle(pool, new java.util.Random(player.level().getGameTime()));
-        //java.util.Collections.shuffle(pool, new java.util.Random());
+        java.util.Collections.shuffle(pool, new java.util.Random());
 
         for (int i = 0; i < count && i < pool.size(); i++) {
             MobEffectInstance original = pool.get(i);
