@@ -40,8 +40,12 @@ public class ModItems {
     public static final DeferredItem<Item> ASCENSION_APPLE =
             MagicApple.ITEMS.registerItem("ascension_apple",
                     properties -> new MagicAppleItem(properties.food(MAGIC_FOOD).rarity(Rarity.UNCOMMON),
-                            true,   // grantFlight = true
-                            3600,   // flight duration in ticks = 3 minutes
+                            true,   // grantFlight
+                            3600,   // flightDuration
+                            false,  // isChaos
+                            0,      // chaosMin
+                            0,      // chaosMax
+                            false,  // chaosLevelTwo
                             new MobEffectInstance(MobEffects.SLOW_FALLING, 4000, 0),
                             new MobEffectInstance(MobEffects.REGENERATION, 200, 0),
                             new MobEffectInstance(MobEffects.GLOWING, 100, 0)

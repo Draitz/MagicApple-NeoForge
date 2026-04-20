@@ -112,7 +112,7 @@ public class MagicAppleItem extends Item {
         // Pick random number of effects between min and max
         int count = min + player.level().getRandom().nextInt(max - min + 1);
 
-        // Shuffle a copy of the pool so we dont pick the same effect twice
+        // Shuffle a copy of the pool so we don't pick the same effect twice
         List<MobEffectInstance> pool = new java.util.ArrayList<>(CHAOS_POOL);
         java.util.Collections.shuffle(pool, new java.util.Random());
 
