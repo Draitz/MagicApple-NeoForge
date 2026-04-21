@@ -122,6 +122,8 @@ public class ModItems {
     public static final DeferredItem<Item> EMPOWERED_ASCENSION_APPLE =
             MagicApple.ITEMS.registerItem("empowered_ascension_apple",
                     properties -> new EmpoweredMagicAppleItem(properties.food(MAGIC_FOOD).rarity(Rarity.EPIC),
+                            true,   // grantFlight
+                            6000,   // flightDuration
                             new MobEffectInstance(MobEffects.SLOW_FALLING, 6600, 0),
                             new MobEffectInstance(MobEffects.REGENERATION, 400, 0),
                             new MobEffectInstance(MobEffects.RESISTANCE, 200, 0)
