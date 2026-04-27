@@ -17,6 +17,7 @@ public class ModEvents {
         // Only run on server side
         if (player.level().isClientSide()) return;
 
+
         // Check if this player has active flight from an apple
         if (MagicAppleItem.flightEndTimes.containsKey(player.getUUID())) {
             long expireTime = MagicAppleItem.flightEndTimes.get(player.getUUID());
