@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import de.draitz.magicapple.registry.ModCreativeTabs;
 import de.draitz.magicapple.registry.ModEffects;
 import de.draitz.magicapple.registry.ModItems;
+import de.draitz.magicapple.registry.ModLootModifiers;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
@@ -45,5 +46,6 @@ public class MagicApple {
         ModEffects.MOB_EFFECTS.register(modEventBus);
         ModItems.register();
         ModEffects.register();
+        ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
     }
 }

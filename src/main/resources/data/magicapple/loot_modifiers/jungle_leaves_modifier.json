@@ -1,0 +1,17 @@
+{
+  "type": "magicapple:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:blocks/jungle_leaves"
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.001
+    }
+  ],
+  "items": [
+    "magicapple:blaze_apple",
+    "magicapple:omen_apple"
+  ]
+}
