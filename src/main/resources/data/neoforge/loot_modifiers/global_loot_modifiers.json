@@ -1,10 +1,15 @@
 {
   "replace": false,
   "entries": [
-    "magicapple:oak_leaves_modifier",
-    "magicapple:dark_oak_leaves_modifier",
-    "magicapple:spruce_leaves_modifier",
-    "magicapple:birch_leaves_modifier",
-    "magicapple:jungle_leaves_modifier"
+    "magicapple:oak_ascension_apple_modifier",
+    "magicapple:oak_speed_apple_modifier",
+    "magicapple:dark_oak_nightseer_apple_modifier",
+    "magicapple:dark_oak_chaos_apple_modifier",
+    "magicapple:spruce_berserker_apple_modifier",
+    "magicapple:spruce_phantom_apple_modifier",
+    "magicapple:birch_tide_apple_modifier",
+    "magicapple:birch_mining_apple_modifier",
+    "magicapple:jungle_blaze_apple_modifier",
+    "magicapple:jungle_omen_apple_modifier"
   ]
 }
